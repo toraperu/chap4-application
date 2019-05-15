@@ -1,0 +1,20 @@
+<header>
+	<h1>Book詳細</h1>
+</header>
+
+<main>
+     <% if flash[:notice] %>
+       <div class="flash">
+         <%= flash[:notice] %>
+       </div>
+     <% end %>
+	<h2>Title</h2>
+	<%= @book.title %>
+
+	<h2>Body</h2>
+	<%= @book.body %>
+
+	<%=link_to "Edit", edit_book_path(@book.id), class:"show_#{@book.id}"%>
+	<%=link_to "Back", books_path(@book.id), class:"back" %>
+
+</main>
